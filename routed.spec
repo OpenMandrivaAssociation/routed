@@ -1,4 +1,4 @@
-Summary: The routing daemon which maintains routing tables.
+Summary: The routing daemon which maintains routing tables
 Name: routed
 Version: 0.17
 Release: %mkrel 8
