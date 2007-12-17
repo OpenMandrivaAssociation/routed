@@ -10,7 +10,7 @@ Source1: routed.init
 Patch: routed-nonrootbuild.patch
 Patch1: routed-BM-fix.patch
 #Patch2: routed-gee-man-fork.patch.bz2
-Prereq: /sbin/chkconfig
+Requires(post,preun): chkconfig
 Requires(post,preun):	rpm-helper
 Conflicts: gated
 
