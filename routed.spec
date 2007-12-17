@@ -12,7 +12,6 @@ Patch1: routed-BM-fix.patch
 #Patch2: routed-gee-man-fork.patch.bz2
 Prereq: /sbin/chkconfig
 Prereq: rpm-helper
-Buildroot: %{_tmppath}/%{name}-root
 Conflicts: gated
 
 %description
