@@ -4,6 +4,7 @@ Version: 0.17
 Release: %mkrel 8
 License: BSD
 Group: System/Servers
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL: ftp://ftp.uk.linux.org/pub/linux/Networking/netkit
 Source: ftp://sunsite.unc.edu/pub/Linux/system/network/daemons/netkit-routed-%{version}.tar.bz2
 Source1: routed.init
