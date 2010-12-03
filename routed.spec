@@ -1,7 +1,7 @@
 Summary: The routing daemon which maintains routing tables
 Name: routed
 Version: 0.17
-Release: %mkrel 11
+Release: %mkrel 12
 License: BSD
 Group: System/Servers
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
