@@ -37,15 +37,15 @@ The routed package should be installed on any networked machine.
 CC=gcc CFLAGS="$RPM_OPT_FLAGS" make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/{%{_initrddir},%{_mandir}/man8,%{_sbindir}}
-make INSTALLROOT=$RPM_BUILD_ROOT install
-install -m 755 %{SOURCE1} $RPM_BUILD_ROOT/%{_initrddir}/routed
+rm -rf %{buildroot}
+mkdir -p %{buildroot}/{%{_initrddir},%{_mandir}/man8,%{_sbindir}}
+make INSTALLROOT=%{buildroot} install
+install -m 755 %{SOURCE1} %{buildroot}/%{_initrddir}/routed
 
-perl -pi -e "s|/etc/rc.d/init.d|%{_initrddir}|" $RPM_BUILD_ROOT%{_initrddir}/*
+perl -pi -e "s|/etc/rc.d/init.d|%{_initrddir}|" %{buildroot}%{_initrddir}/*
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %_post_service %name
