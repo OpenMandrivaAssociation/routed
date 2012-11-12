@@ -1,0 +1,12 @@
+diff -urN netkit-routed-0.16-old/ripquery/Makefile netkit-routed-0.16/ripquery/Makefile
+--- netkit-routed-0.16-old/ripquery/Makefile	Sun Aug  1 05:34:39 1999
++++ netkit-routed-0.16/ripquery/Makefile	Thu Mar 16 19:11:01 2000
+@@ -9,7 +9,7 @@
+ 	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
+ 
+ install: ripquery
+-	install -o root -g root -m $(BINMODE) ripquery $(INSTALLROOT)$(SBINDIR)
++	install -m $(BINMODE) ripquery $(INSTALLROOT)$(SBINDIR)
+ 	install -m$(MANMODE) ripquery.8 $(INSTALLROOT)$(MANDIR)/man8
+ clean:
+ 	rm -f $(OBJS) ripquery

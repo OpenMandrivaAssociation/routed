@@ -1,0 +1,12 @@
+diff -urN netkit-routed-0.16-old/configure netkit-routed-0.16/configure
+--- netkit-routed-0.16-old/configure	Sun Dec 12 19:35:57 1999
++++ netkit-routed-0.16/configure	Thu Jul 27 14:58:26 2000
+@@ -57,7 +57,7 @@
+ fi
+ 
+ SBINDIR="$EXECPREFIX/sbin"
+-MANDIR="$PREFIX/man"
++MANDIR="$PREFIX/share/man"
+ 
+ echo "Directories: $SBINDIR $MANDIR "
+ 
