@@ -1,0 +1,12 @@
+[Unit]
+Description=The routed daemon allows for automatic IP router table updated via the RIP protocol. While RIP is widely used on small networks, more complex routing protocls are needed for complex networks.
+After=syslog.target network.target
+Wants=network.target
+
+[Service]
+Type=forking
+EnvironmentFile=-sysconfig/routed
+ExecStart=/usr/sbin/routed $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
