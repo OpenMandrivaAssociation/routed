@@ -5,9 +5,9 @@ Release: 12
 License: BSD
 Group: System/Servers
 URL: ftp://ftp.uk.linux.org/pub/linux/Networking/netkit
-Source: ftp://sunsite.unc.edu/pub/Linux/system/network/daemons/netkit-routed-%{version}.tar.bz2
+Source0: ftp://sunsite.unc.edu/pub/Linux/system/network/daemons/netkit-routed-%{version}.tar.bz2
 Source1: routed.service
-Patch: routed-nonrootbuild.patch
+Patch0: routed-nonrootbuild.patch
 Patch1: routed-BM-fix.patch
 Conflicts: gated
 
@@ -21,14 +21,14 @@ The routed package should be installed on any networked machine.
 
 %prep
 %setup -q -n netkit-%{name}-%{version}
-%patch -p1
-%patch1 -p1
+%apply_patches
 
 %build
-%serverbuild
+%setup_compile_flags
 
-./configure --prefix=%{_prefix}
-CC=gcc CFLAGS="%{optflags}" make
+sed -i configure -e '/^LDFLAGS=/d'
+./configure --prefix=%{_prefix} --with-c-compiler=%{__cc}
+%make
 
 %install
 mkdir -p %{buildroot}{%{_unitdir},%{_mandir}/man8,%{_sbindir}}
@@ -45,8 +45,6 @@ cat > %{buildroot}%{_sysconfdir}/routed << EOF
 #OPTIONS="-q -g"
 EOF
 
-%clean
-
 %post
 %systemd_post %{name}.service
 
@@ -61,5 +59,3 @@ EOF
 %{_mandir}/man8/*
 %attr(0644,root,root) %{_unitdir}/%{name}.service
 %attr(0644,root,root) %{_sysconfdir}/routed
-
-
