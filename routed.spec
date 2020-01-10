@@ -21,7 +21,7 @@ The routed package should be installed on any networked machine.
 
 %prep
 %setup -q -n netkit-%{name}-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %setup_compile_flags
