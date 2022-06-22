@@ -1,7 +1,7 @@
 Summary: The routing daemon which maintains routing tables
 Name: routed
 Version: 0.17
-Release: 25
+Release: 26
 License: BSD
 Group: System/Servers
 URL: ftp://ftp.uk.linux.org/pub/linux/Networking/netkit
