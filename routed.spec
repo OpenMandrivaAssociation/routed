@@ -11,6 +11,11 @@ Patch0: routed-nonrootbuild.patch
 Patch1: routed-BM-fix.patch
 Conflicts: gated
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The routed routing daemon handles incoming RIP traffic and broadcasts
 outgoing RIP traffic about network traffic routes, in order to maintain
